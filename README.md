@@ -1,13 +1,8 @@
-# 電腦視覺作業一：豬隻物件偵測 (TAICA CVPDL 2025 HW1)
+# 電腦視覺專案一：豬隻物件偵測 (TAICA CVPDL 2025 HW1)
 
-![Kaggle](https://img.shields.io/badge/Kaggle-Competition-blue?logo=kaggle)
-![YOLOv10](https://img.shields.io/badge/YOLOv10-Ultralytics-green)
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Colab](https://img.shields.io/badge/Google-Colab-F9AB00?logo=googlecolab&logoColor=white)
+本專案為 **TAICA CVPDL 2025 HW-1**  Kaggle 競賽的解決方案。本次專案的目標是訓練一個物件偵測模型，以準確地偵測並定位影像中的**豬隻**。
 
-本專案為 **TAICA CVPDL 2025 HW-1** Kaggle 競賽的解決方案。本次作業的目標是訓練一個物件偵測模型，以準確地偵測並定位影像中的**豬隻**。
-
-本專案採用了最先進的 **YOLOv10** 架構（透過 `ultralytics` 套件套用），且所有實作與模型訓練皆於 Google Colab 環境上執行。
+本專案採用了先進的 **YOLOv10** 架構（透過 `ultralytics` 套件套用），且所有實作與模型訓練皆於 Google Colab 環境上執行。
 
 ## 📁 專案結構 (Repository Structure)
 
@@ -19,8 +14,16 @@
 │   ├── README.md             # 原始的繁體中文執行步驟說明
 │   └── requirements.txt      # Python 依賴套件清單
 ├── report.pdf                # 詳細的專案書面報告
+├── 小豬農場 (1).mp4          # 實際預測效果展示影片
 └── README.md                 # 本說明文件
 ```
+
+## 🎬 效果展示 (Demonstration)
+
+這是在測試集上運行我們訓練好的 YOLOv10 模型，偵測影片中豬隻的實際效果影片：
+
+https://github.com/user-attachments/assets/dd38fecd-c7d6-41fb-94db-99641bfb7f43
+
 
 ## 🚀 流程概述 (Pipeline Overview)
 
