@@ -14,12 +14,17 @@
 │   ├── README.md             # 原始的繁體中文執行步驟說明
 │   └── requirements.txt      # Python 依賴套件清單
 ├── report.pdf                # 詳細的專案書面報告
+├── example.png               # 實際預測效果截圖
 └── README.md                 # 本說明文件
 ```
 
 ## 🎬 效果展示 (Demonstration)
 
-這是在測試集上運行我們訓練好的 YOLOv10 模型，偵測影片中豬隻的實際效果影片（點擊下方圖片可前往 YouTube 觀看）：
+這是在測試集上運行我們訓練好的 YOLOv10 模型，偵測影片中豬隻的實際效果截圖與影片展示：
+
+![YOLOv10 豬隻物件偵測預測截圖](example.png)
+
+（點擊下方圖片可前往 YouTube 觀看完整影片）：
 
 [![YOLOv10 豬隻物件偵測效果展示](https://img.youtube.com/vi/NoLQrFmbwZU/maxresdefault.jpg)](https://www.youtube.com/watch?v=NoLQrFmbwZU)
 
