@@ -5,61 +5,61 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
 ![Colab](https://img.shields.io/badge/Google-Colab-F9AB00?logo=googlecolab&logoColor=white)
 
-This repository contains the solution for the **TAICA CVPDL 2025 HW-1** Kaggle competition. The objective of this homework is to train an object detection model to accurately detect and localize **pigs** within images. 
+本專案為 **TAICA CVPDL 2025 HW-1** Kaggle 競賽的解決方案。本次作業的目標是訓練一個物件偵測模型，以準確地偵測並定位影像中的**豬隻**。
 
-The project leverages the state-of-the-art **YOLOv10** architecture via the `ultralytics` library, implemented and trained entirely on Google Colab.
+本專案採用了最先進的 **YOLOv10** 架構（透過 `ultralytics` 套件套用），且所有實作與模型訓練皆於 Google Colab 環境上執行。
 
-## 📁 Repository Structure
+## 📁 專案結構 (Repository Structure)
 
 ```text
 .
 ├── code_M132040009/
 │   ├── src/
-│   │   └── code.ipynb        # Main Jupyter Notebook containing the end-to-end pipeline
-│   ├── README.md             # Original execution steps in Traditional Chinese
-│   └── requirements.txt      # Python dependencies
-├── report.pdf                # Detailed project report
-└── README.md                 # This file
+│   │   └── code.ipynb        # 包含端到端 (end-to-end) 執行流程的主 Jupyter Notebook
+│   ├── README.md             # 原始的繁體中文執行步驟說明
+│   └── requirements.txt      # Python 依賴套件清單
+├── report.pdf                # 詳細的專案書面報告
+└── README.md                 # 本說明文件
 ```
 
-## 🚀 Pipeline Overview
+## 🚀 流程概述 (Pipeline Overview)
 
-The pipeline (`code.ipynb`) is designed to run seamlessly on Google Colab and consists of the following key stages:
+本流程 (`code.ipynb`) 專為在 Google Colab 上無縫運行而設計，主要包含以下幾個關鍵階段：
 
-1. **Environment Setup & Data Acquisition**
-   - Installs necessary dependencies (`ultralytics`, etc.).
-   - Authenticates and downloads the dataset directly via Kaggle API.
+1. **環境設定與資料獲取**
+   - 安裝必要的依賴套件（如 `ultralytics` 等）。
+   - 透過 Kaggle API 驗證並直接下載競賽資料集。
 
-2. **Data Preprocessing & Splitting**
-   - Parses the original ground truth (`gt.txt`) bounding boxes `[x, y, w, h]`.
-   - Converts annotations into YOLO normalized format `[class, x_center, y_center, w_norm, h_norm]`.
-   - Splits the dataset into **80% Training** and **20% Validation** sets.
+2. **資料前處理與切分**
+   - 解析原始的 Ground Truth (`gt.txt`) 邊界框格式 `[x, y, w, h]`。
+   - 將標記轉換為 YOLO 支援的正規化格式 `[class, x_center, y_center, w_norm, h_norm]`。
+   - 將資料集切分為 **80% 訓練集 (Training)** 與 **20% 驗證集 (Validation)**。
 
-3. **Model Training**
-   - **Architecture:** YOLOv10 Large (`yolov10l`).
-   - **Optimizer:** AdamW.
-   - **Hyperparameters:** 100 Epochs, Batch Size 16, Image Size 640.
-   - **Advanced Features:** Cosine Learning Rate (`cos_lr`), Automatic Mixed Precision (`amp`), and Early Stopping (`patience=20`).
+3. **模型訓練 (Model Training)**
+   - **模型架構**：YOLOv10 Large (`yolov10l`)
+   - **優化器**：AdamW
+   - **超參數**：100 Epochs、Batch Size 16、影像大小 (Image Size) 640
+   - **進階訓練技巧**：餘弦退火學習率 (`cos_lr`)、自動混合精度 (`amp`) 以及 Early Stopping (`patience=20`)。
 
-4. **Inference & Post-processing**
-   - Loads the best weights (`best.pt`) from the training phase.
-   - Generates predictions on the unseen test set.
-   - Converts normalized YOLO predictions back to the required Kaggle submission string format (`conf x_left y_top width height class`).
-   - Outputs the final predictions to `submission.csv`.
+4. **推論與後處理 (Inference & Post-processing)**
+   - 載入訓練階段表現最好的權重 (`best.pt`)。
+   - 在未看過的測試集 (Test set) 上生成預測結果。
+   - 將 YOLO 的正規化預測格式轉換回 Kaggle 提交要求的字串格式 (`conf x_left y_top width height class`)。
+   - 輸出最終預測結果至 `submission.csv`。
 
-## 🛠️ Usage / How to Run
+## 🛠️ 使用方法 (How to Run)
 
-1. Open `code_M132040009/src/code.ipynb` in **Google Colab**.
-2. Mount your Google Drive.
-3. Ensure your `kaggle.json` API token is placed in `/content/drive/MyDrive/.kaggle` to allow the dataset download.
-4. Run the notebook cells sequentially from top to bottom.
+1. 在 **Google Colab** 中開啟 `code_M132040009/src/code.ipynb`。
+2. 掛載您的 Google Drive。
+3. 確保您的 `kaggle.json` API 憑證已放置於 `/content/drive/MyDrive/.kaggle` 目錄下，以便順利下載資料集。
+4. 依序由上而下執行所有的 Notebook 儲存格。
 
-## 📦 Dependencies
+## 📦 依賴套件 (Dependencies)
 
-The core libraries used in this project include:
-- `ultralytics` (YOLO implementation)
-- `opencv-python` (Image processing)
-- `pandas` & `numpy` (Data manipulation)
-- `albumentations` (Data augmentation)
+本專案所使用的核心套件包含：
+- `ultralytics` (YOLO 模型實作)
+- `opencv-python` (影像處理)
+- `pandas` & `numpy` (資料處理)
+- `albumentations` (資料擴增)
 
-For a complete list, please refer to the `code_M132040009/requirements.txt` file.
+完整的套件清單請參閱 `code_M132040009/requirements.txt`。
