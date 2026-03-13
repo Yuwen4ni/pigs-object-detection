@@ -45,7 +45,7 @@
 3. **模型訓練 (Model Training)**
    - **模型架構**：YOLOv10 Large (`yolov10l`)
    - **優化器**：AdamW
-   - **超參數**：100 Epochs、Batch Size 16、影像大小 (Image Size) 640
+   - **超參數**：90 Epochs、Batch Size 16、影像大小 (Image Size) 640
    - **進階訓練技巧**：餘弦退火學習率 (`cos_lr`)、自動混合精度 (`amp`) 以及 Early Stopping (`patience=20`)。
 
 4. **推論與後處理 (Inference & Post-processing)**
