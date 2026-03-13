@@ -1,4 +1,4 @@
-# TAICA CVPDL 2025 HW1 - Pig Object Detection
+# 電腦視覺作業一：豬隻物件偵測 (TAICA CVPDL 2025 HW1)
 
 ![Kaggle](https://img.shields.io/badge/Kaggle-Competition-blue?logo=kaggle)
 ![YOLOv10](https://img.shields.io/badge/YOLOv10-Ultralytics-green)
